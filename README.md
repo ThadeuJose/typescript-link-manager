@@ -2,19 +2,30 @@
 Project to learn Typescript
 
 ## Next Step:
-Isolate db part 
+Filter Favorites
 
 ## TODO
 
-Isolate db part 
+Filter Favorites
 
-Filter tags and search
+Filter tags
+
+Isolate db part
+
+Search
 
 Finish page  
 
-Add Screen? 
+Add Screen?
 
 ## Technical Debt
+
+Configure nyc to cover all
+  Change tests to test
+  https://github.com/istanbuljs/nyc
+  https://www.npmjs.com/package/@istanbuljs/nyc-config-typescript
+  https://mochajs.org/#configuring-mocha-nodejs
+
 Sass ? Tailwind
 https://tailwindcss.com/
 
