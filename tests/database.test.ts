@@ -5,19 +5,19 @@ import { Link } from '../src/ts/data'
 describe('getAllLinks', function() {
 
   it('Result should be a array of link', function() {
-    let links: Link[] = [
+    let input: Link[] = [
       {
         title:"Test",
         description:"Test",
         url:"https://test.org/",
-        isFavorite: false,
+        isFavorite: true,
         tag:["Test1","Test2"]
       },
-    ]
-    let database = new Database(links);
+    ];
+    let database = new Database(input);
     let result: Link[] = database.getAllLinks();
     expect(result).to.be.an('array');
-    expect(result).to.deep.equal(links);
+    expect(result).to.deep.equal(input);
   });
 
   it('Get all favorites', function() {

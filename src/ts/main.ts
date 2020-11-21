@@ -1,17 +1,26 @@
 import Database from "./database";
-import { Link, data } from "./data";
+import { Link, data, tag } from "./data";
 
 export function main(): void {
   let db = new Database(data);
+
   let links: Link[] = db.getAllLinks();
+
   const containerId = 'link-box';
-  const app = getElementById(containerId);
 
-  links.forEach((element) => {
-    app?.appendChild(createLink(element));
+  createList(containerId, links, createLink);
+
+  const tagBoxId = 'tag-box';
+
+  createList(tagBoxId, tag, createTag);
+
+}
+
+function createList(containerId: string, list: Array<any>, createFunction: (element: any) => HTMLElement) {
+  const container = getElementById(containerId);
+  list.forEach((element) => {
+    container?.appendChild(createFunction(element));
   });
-
-  console.log(db.getAllLinks());
 }
 
 function getElementById(id: string): HTMLElement {
@@ -33,9 +42,37 @@ function createLink(link: Link): HTMLElement {
   return resp;
 }
 
-function createElement(tag:string, className:string): HTMLElement {
+function createTag(tag: string): HTMLElement {
+  const categoryBox: HTMLElement = createElement('div', 'category_box flex');
+  const circleIcon: HTMLElement = createCircleIcon();
+  const title: HTMLElement = createElement('p', 'category_box__title');
+  const trashIcon: HTMLElement = createTrashIcon();
+
+  setupStructure2({ categoryBox, circleIcon, title, trashIcon });
+
+  setText(title, tag);
+
+  return categoryBox;
+}
+
+function createCircleIcon(): HTMLElement{
+  return createIcon('icon icon_circle color_red', 'fas fa-circle');
+}
+
+function createTrashIcon(): HTMLElement{
+  return createIcon('icon icon_trash', 'fas fa-trash-alt');
+}
+
+function createIcon(classnamesDiv:string, classnamesIcon:string): HTMLElement {
+  const iconBox: HTMLElement = createElement('div', classnamesDiv);
+  const icon: HTMLElement = createElement('i', classnamesIcon);
+  iconBox.appendChild(icon);
+  return iconBox;
+}
+
+function createElement(tag:string, classNames:string): HTMLElement {
   let resp = document.createElement(tag);
-  resp.className = className;
+  resp.className = classNames;
   return resp;
 }
 
@@ -43,6 +80,12 @@ function setupStructure({ resp, linkBox, title, description }:any): void {
   resp.appendChild(linkBox);
   linkBox.appendChild(title);
   linkBox.appendChild(description);
+}
+
+function setupStructure2({ categoryBox, circleIcon, title, trashIcon }:any): void {
+  categoryBox.appendChild(circleIcon);
+  categoryBox.appendChild(title);
+  categoryBox.appendChild(trashIcon);
 }
 
 function setText(element:HTMLElement, text: string): void {

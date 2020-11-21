@@ -2,18 +2,23 @@
 Project to learn Typescript
 
 ## Next Step:
+Remove Duplicate in the main
 
 ## TODO
 
-Isolate db part
+Filter by tags in the html
 
 Search
 
 Finish page  
 
-Add Screen?
+Isolate db part
+
+Add Screen? Nope
 
 ONLY PUT CSS IN THE END
+  Tailwind
+  Circle change color
 
 ## Technical Debt
 

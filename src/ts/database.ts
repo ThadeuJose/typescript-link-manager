@@ -11,6 +11,10 @@ export default class Database {
     return this.data;
   }
 
+  getAllTags(): Link[] {
+    return this.data;
+  }
+
   getFavorites(): Link[] {
     return this.data.filter((elem: Link) => elem.isFavorite);
   }

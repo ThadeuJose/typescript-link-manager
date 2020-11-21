@@ -116,7 +116,7 @@ h1 {
 }
 
 .overflow-box {
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .icon {
   font-size: 20px;
