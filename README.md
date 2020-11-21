@@ -2,13 +2,8 @@
 Project to learn Typescript
 
 ## Next Step:
-Filter Favorites
 
 ## TODO
-
-Filter Favorites
-
-Filter tags
 
 Isolate db part
 
@@ -18,6 +13,8 @@ Finish page
 
 Add Screen?
 
+ONLY PUT CSS IN THE END
+
 ## Technical Debt
 
 Configure nyc to cover all
@@ -25,6 +22,7 @@ Configure nyc to cover all
   https://github.com/istanbuljs/nyc
   https://www.npmjs.com/package/@istanbuljs/nyc-config-typescript
   https://mochajs.org/#configuring-mocha-nodejs
+  Mocha configure file + nyc
 
 Sass ? Tailwind
 https://tailwindcss.com/

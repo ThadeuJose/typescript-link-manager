@@ -1,8 +1,8 @@
 import Database from "./database";
-import { Link } from "./data";
+import { Link, data } from "./data";
 
 export function main(): void {
-  let db = new Database();
+  let db = new Database(data);
   let links: Link[] = db.getAllLinks();
   const containerId = 'link-box';
   const app = getElementById(containerId);
@@ -33,7 +33,7 @@ function createLink(link: Link): HTMLElement {
   return resp;
 }
 
-export function createElement(tag:string, className:string): HTMLElement {
+function createElement(tag:string, className:string): HTMLElement {
   let resp = document.createElement(tag);
   resp.className = className;
   return resp;
